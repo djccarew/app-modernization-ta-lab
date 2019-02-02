@@ -149,7 +149,7 @@ We've provided you with some scripts to generate the Kubernetes metadata require
 
 7. The app should appear in your browser and you should be able to see items in the Catalog by browsing in different categories
 
-![PBW app running](images/s8.png)
+![PBW app running](images/ss8.png)
 
 ### Step 5: Clean up
 
