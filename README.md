@@ -15,7 +15,7 @@ In this lab you'll run Transformation Advisor against the data collected from an
 
 Transformation Advisor organizes your legacy server scans into workspaces and collections. Specific server scans are typically put into to separate collections. You'll use a completed server scan as a starting point for the lab
 
-1. Download the server scan from [this link](ta/AppSrv01.zip) (Right click on the link and select **Save As** from the context menu).
+1. Download the server scan from [this link](ta/AppSrv01.zip) (Right click on the link and select **Save Link As** from the context menu and save the file locally).
 
 2. Login in to Transformation Advisor using the URL and credentials provided to you by your instructor
 
@@ -45,7 +45,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 2. Scroll down to the bottom of the page and click on **Analysis Report**. Click **OK** when prompted.
 
-3. The analysis will open up in a new browser tab. Scroll down to the section with title **Detailed Results by Rule** and click on **show rule help** next to the rule named **The JSF SunRI engine was removed** to see more details about what needs to be fixed to migrate the Java Pet Store app to WebSphere Liberty running on ICP. Take a look at some of the  other information in the report to get a feel for what type of information to expect when running Transformation Advisor against legacy Java EE apps.
+3. The analysis will open up in a new browser tab. Scroll down to the section with title **Detailed Results by Rule** and click on **Show rule help** next to the rule named **The JSF SunRI engine was removed** to see more details about what needs to be fixed to migrate the Java Pet Store app to WebSphere Liberty running on ICP. Take a look at some of the  other information in the report to get a feel for what type of information to expect when running Transformation Advisor against legacy Java EE apps.
 
 ![Sun JSF RI](images/ss4.png)
 
@@ -53,7 +53,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 ![Recommendation link](images/ss5.png)
 
-5. This time take a look at one of the "show stoppers" for the app **plants-by-websphere-jee5.ear** by selecting the app and then clicking on the Analysis Report link. This version of the  WebSphere sample Plants by WebSphere was shipped with WebSphere Application Server V7.0. 2 of the  3 severe issues have to do with no support for the JAX-RPC API in Liberty. With the explosion of REST based APIs, technologies like JAX-RPC and SOAP/WSDL have become more or less obsolete.
+5. This time take a look at one of the "show stoppers" for the app **plants-by-websphere-jee5.ear** by selecting the app and then clicking on the Analysis Report link. This version of the  WebSphere sample Plants by WebSphere was shipped with WebSphere Application Server V7.0. 2 of the  3 severe issues have to do with no support for the JAX-RPC API in Liberty. Note: with the explosion of REST based APIs, technologies like JAX-RPC and SOAP/WSDL have become more or less obsolete.
 
 6. Go back to the **IBM Transformation** browser tab and click on **<- Recommendations** to go back to the list of apps.
 
@@ -104,7 +104,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 We've provided you with some scripts to generate the Kubernetes metadata required to deploy the app and connect it to the  original MySQL database it was using when running in WebSphere Application Server
 
-1. Generate the  Kubernetes secrets for the MySQL database credentials. You instructor will provide you with the correct values for username, password, host and port. Run the following command form your terminal:
+1. Generate the  Kubernetes secrets for the MySQL database credentials. You instructor will provide you with the correct values for username, password, host and port. Run the following command from  your terminal:
 ```
    scripts/create-secrets.sh
 
@@ -142,7 +142,7 @@ We've provided you with some scripts to generate the Kubernetes metadata require
 
 `[ICP_PROXY_URL]:[nodePort]/pbw/index.html`
 
-7. The app should appear in your browser an you should be able to see items in the Catalog by browsing in different categories
+7. The app should appear in your browser and you should be able to see items in the Catalog by browsing in different categories
 
 
 ### Step 5: Clean up
