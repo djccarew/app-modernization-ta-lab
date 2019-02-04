@@ -2,7 +2,7 @@
 
 ## Lab - Migrating Legacy JEE apps to IBM Cloud Private
 
-### Working with IBM Cloud Transformation Advisor
+### Part 1 - Working with IBM Cloud Transformation Advisor
 
 ## Overview
 
@@ -144,8 +144,10 @@ We've provided you with some scripts to generate the Kubernetes metadata require
 ```
 
 6. Test the app by entering the following URL in your  browser. The **nodePort** is the port returned from the previous command and the **[ICP Proxy URL]** should be provided to you by your instructor:
+```
+   [ICP_PROXY_URL]:[nodePort]/pbw/index.html
 
-`[ICP_PROXY_URL]:[nodePort]/pbw/index.html`
+```
 
 7. The app should appear in your browser and you should be able to see items in the Catalog by browsing in different categories
 
