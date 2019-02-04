@@ -87,28 +87,28 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 5. Login to the VM designated as the client env to ICP using the credentials  provided  to you
 
-6. From a terminal window log in to the ICP Cluster with the following command (Note substitute your ICP Master IP for **[ICP Master IP]**)
-```
-    cloudctl login -a [ICP Master IP]:8443 --skip-ssl-validation
-```
-
-7. Clone the Git repo  with  the following commands  appending the HTTPS URL from your clipboard
+6. From a client terminal window clone the Git repo  with  the following commands  appending the HTTPS URL from your clipboard
 ```
      git clone [HTTPS URL for NEW REPO]
      cd app-modernization-plants-by-websphere-jee6
 ```
 
-8. Build the application .ear file using Maven by typing in (or copying and pasting in) the following command
+7. Build the application .ear file using Maven by typing in (or copying and pasting in) the following command
 ```
    mvn package
 
 ```
-9. Build a docker image  by typing in (or copying and pasting in) the following (uncommented) commands
+8. Build a docker image  by typing in (or copying and pasting in) the following (uncommented) commands
 ```
    # Note substitute your ICP namespace (e.g devnamespace09) for [YOUR_DEVNAMESPACE]
    docker build -t mycluster.icp:8500/[YOUR_DEVNAMESPACE]/pbw-mysql:1.0 .
 
 ```
+9. Log in to the ICP Cluster with the following command (Note substitute your ICP Master IP for **[ICP Master IP]**)
+```
+    cloudctl login -a [ICP Master IP]:8443 --skip-ssl-validation
+```
+
 10. Push the image to the ICP private repository by typing in (or copying and pasting in) the following (uncommented) commands
 ```
    # Login to the ICP private repository
