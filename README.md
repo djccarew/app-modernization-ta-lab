@@ -68,7 +68,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 9. Look through the migration steps. You'll be (more or less) following these steps  in this and subsequent labs (except for the first step where it is suggested to validate the app to be migrated can run on a local copy of WebSphere Liberty)
 
 
-### Step 3: Clone the Github repo that contains the code and  then build a WebSphere Liberty image of the app and push it to the ICP private repository
+### Step 3: Clone the Github repo that contains the code, build a WebSphere Liberty image of the app and then push it to the ICP private repository
 
 **Note:** This lab is designed for a multiuser IBM Cloud Private installation where each student is using a client shell with a unique username available via the ENV var $USER.
 
@@ -101,7 +101,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 8. Build a docker image  by typing in (or copying and pasting in) the following (uncommented) commands
 ```
    # Note substitute your ICP namespace (e.g devnamespace09) for [YOUR_DEVNAMESPACE]
-   docker build -t mycluster.icp:8500/[YOUR_DEVNAMESPACE]/pbw-mysql:1.0 .
+   docker build -t mycluster.icp:8500/[YOUR_DEVNAMESPACE]/pbw-mariadb-web:1.0.0 .
 
 ```
 9. Log in to the ICP Cluster with the following command (Note substitute your ICP Master IP for **[ICP Master IP]**)
@@ -115,7 +115,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
    docker login mycluster.icp:8500
 
    # Push the image. Note substitute your ICP namespace (e.g devnamespace09) for [YOUR_DEVNAMESPACE]
-   docker push mycluster.icp:8500/[YOUR_DEVNAMESPACE]/pbw-mysql:1.0
+   docker push mycluster.icp:8500/[YOUR_DEVNAMESPACE]/pbw-mariadb-web:1.0.0
 
 ```
 
@@ -144,10 +144,10 @@ We've provided you with some scripts to generate the Kubernetes metadata require
 4. Deploy to ICP by typing in (or copying and pasting in) the following (uncommented) commands:
 ```
    # Create the secrets
-   kubectl create -f k8s/pbw-mysql-credentials.yaml
+   kubectl create -f k8s/pbw-liberty-mariadb-credentials.yaml
 
    # Deploy the app
-   kubectl create -f k8s/pbw-mysql-deployment.yaml
+   kubectl create -f k8s/pbw-liberty-mariadb-deployment.yaml
 
 ```
 
@@ -172,7 +172,7 @@ We've provided you with some scripts to generate the Kubernetes metadata require
 1. Run the following command to uninstall the app and remove all related resources
 
 ```
-   kubectl delete svc, deploy, secret -l app=pbw-mysql
+   kubectl delete svc, deploy, secret -l app=pbw-liberty-mariadb
 
 ```
 
