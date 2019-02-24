@@ -174,7 +174,7 @@ We've provided you with some scripts to generate the Kubernetes metadata require
 1. Run the following command to uninstall the app and remove all related resources
 
     ```bash
-    kubectl delete svc, deploy, secret -l app=pbw-liberty-mariadb
+    kubectl delete svc,deploy,secret -l app=pbw-liberty-mariadb
     ```
 
 ## Summary
